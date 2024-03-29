@@ -1,0 +1,7 @@
+<apex:page standardController="Opportunity" recordSetvar="opportunities" extensions="BulkDeleteOpportunity" lightningStylesheets="true">
+    <apex:form>
+        <apex:pageBlock title="０件以上３０件未満の商談レコードを選択してください">
+            <apex:commandButton action="{!back}" value="戻る"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

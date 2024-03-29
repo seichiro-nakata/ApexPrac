@@ -1,0 +1,16 @@
+<apex:page controller="CreateContactController" lightningStylesheets="true">
+    <apex:form>
+        <apex:pageBlock>
+            <apex:message/>
+            <apex:pageBlockSection title="取引先情報入力" collapsible="falese" columns="1">
+                <apex:inputField value="{!accProperty.Name}"/>
+                <apex:inputField value="{!conProperty.LastName}"/>
+                <apex:inputField value="{!conProperty.FirstName}"/>
+                <apex:inputField value="{!conProperty.Email}"/>
+            </apex:pageBlockSection>
+            <div align="right">
+                <apex:commandButton action="{!next}" value="次へ"/>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,10 @@
+<apex:page standardController="Opportunity" recordSetvar="opportunities" extensions="BulkDeleteOpportunity" lightningStylesheets="true">
+    <apex:form>
+        <apex:pageBlock>
+            <apex:message/>
+            <apex:pageBlockSection title="削除が完了しました。">
+                <apex:commandButton action="{!back}" value="閉じる"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

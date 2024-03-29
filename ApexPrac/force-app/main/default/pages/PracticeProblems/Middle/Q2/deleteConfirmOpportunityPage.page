@@ -1,0 +1,12 @@
+<apex:page standardController="Opportunity" recordSetvar="opportunities" extensions="BulkDeleteOpportunity" lightningStylesheets="true">
+    <apex:form>
+        <apex:pageBlock title="現在選択されている商談">
+            <apex:message/>
+            <apex:pageBlockTable value="{!selectedOpportunities}" var="opportunity">
+                <apex:column value="{!opportunity.Name}"/>
+            </apex:pageBlockTable>
+            
+            <apex:commandButton action="{!del}" value="削除"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
