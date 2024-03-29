@@ -1,6 +1,11 @@
-<apex:page>
-<!-- Begin Default Content REMOVE THIS -->
-<h1>Congratulations</h1>
-This is your new Page
-<!-- End Default Content REMOVE THIS -->
+<apex:page controller="Q7Controller" lightningStylesheets="true">
+    <apex:form>
+        <apex:pageBlock>
+            <apex:message/>
+            <apex:pageBlockSection title="1以上100以下の数値を入力してください" collapsible="falese" columns="1"/>
+            <div align="right">
+                <apex:commandButton action="{!back}" value="戻る"/>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>
