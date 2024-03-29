@@ -2,7 +2,7 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
     <isExposed>true</isExposed>
-    <description>Apex 演習 Q3 LWC</description>
+    <description>Apex 演習 Q4 LWC</description>
     <targets>
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
