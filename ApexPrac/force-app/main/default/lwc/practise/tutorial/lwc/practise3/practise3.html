@@ -1,0 +1,12 @@
+<template>
+    <lightning-input type="checkbox" label="ラベル" onchange={showDivHandler}></lightning-input>
+
+    <template lwc:if={displayDiv}>
+        <template for:each={cityList} for:item="city">
+            <p key={city}>{city}</p>
+        </template>
+    </template>
+    <template lwc:else>
+        <div>FALSEです。</div>
+    </template>
+</template>

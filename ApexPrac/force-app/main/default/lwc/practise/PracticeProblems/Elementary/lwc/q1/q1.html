@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Q1 LWC" icon-name="standard:formula">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-medium">
+                <label for="orangeNumber">みかんの個数</label>
+                <lightning-input type="number" name="orangeNumber" onchange={numberChangeHandler}></lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-button label="Add" icon-name="utility:add" icon-position="right" onclick={addNum}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-formatted-text value={currentResult}></lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
