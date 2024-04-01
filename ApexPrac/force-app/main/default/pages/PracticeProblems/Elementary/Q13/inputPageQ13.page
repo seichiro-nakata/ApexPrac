@@ -1,0 +1,14 @@
+<apex:page controller="Q13Controller" lightningStylesheets="true">
+    <apex:form>
+        <apex:pageBlock>
+            <apex:message/>
+            <apex:pageBlockSection title="文字列を入力してください" collapsible="falese" columns="1">
+                <apex:inputText value="{!inputVal}"/>
+                <apex:pageMessages />
+            </apex:pageBlockSection>
+            <div align="right">
+                <apex:commandButton action="{!getLastCharacter}" value="計算"/>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
