@@ -20,6 +20,10 @@ public with sharing class Q16Controller {
             );
         }
 
-        insert obj;
+        try {
+            insert obj;
+        } catch (Exception e) {
+            System.debug('レコード作成エラー');
+        }
     }
 }
