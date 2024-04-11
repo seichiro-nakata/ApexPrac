@@ -2,9 +2,11 @@ trigger Q16Event on Account (after insert, after update, after delete, after und
     //再帰時やトリガオフスイッチがTrueの場合は処理を終了する。
     if (Q16Controller.hasExecuting || TriggerSwitch__mdt.getInstance('Account').IsTriggerOff__c) {
         return;
-    }
+    } 
+    
     //再帰処理防止フラグをON 
-    Q16Controller.hasExecuting = true; 
+    Q16Controller.hasExecuting = true;
+    
     // Apexクラスのコンストラクタを呼び出す
     Q16Controller handler = new Q16Controller(Trigger.isExecuting, Trigger.size);
 
@@ -32,4 +34,7 @@ trigger Q16Event on Account (after insert, after update, after delete, after und
             // delete処理がDBに保存される前に起動する処理
         }
     }
+
+    // 再帰チェック変数の値を反転させる
+    Q16Controller.hasExecuting = false;
 }
