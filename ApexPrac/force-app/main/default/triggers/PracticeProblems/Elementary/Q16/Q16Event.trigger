@@ -26,6 +26,7 @@ trigger Q16Event on Account (after insert, after update, after delete, after und
         }
         when BEFORE_INSERT {
             // insert処理がDBに保存される前に起動する処理
+            Q16Controller.hasExecuting = false;
         }
         when BEFORE_UPDATE {
             // update処理がDBに保存される前に起動する処理
@@ -34,7 +35,4 @@ trigger Q16Event on Account (after insert, after update, after delete, after und
             // delete処理がDBに保存される前に起動する処理
         }
     }
-
-    // 再帰チェック変数の値を反転させる
-    Q16Controller.hasExecuting = false;
 }
