@@ -21,15 +21,19 @@ public with sharing class Q17Controller {
             if (selectObj != null) {
                 String strName = String.valueOf(selectObj.Name);
 
-                if (strName.right(4).equals(RELATION_STRING)) {
+                if (strName.endsWith(RELATION_STRING)) {
+                    // 二回目
                     updateObj = new ObjectsForCopy__c (
                         Name                = newObj.Name + RELATION_STRING + '2',
                         CopyAccountId__c    = newObj.Id,
                         CopyAccountName__c  = newObj.Name,
                         Id                  = selectObj.Id
                     );
-                } else if (strName.right(5).left(4).equals(RELATION_STRING)) {
-                    Integer countNum = Integer.valueOf(strName.right(1));
+                } else if (strName.contains(RELATION_STRING)) {
+                    // 三回目以降
+                    Integer index = strName.indexOf(RELATION_STRING);
+                    Integer countNum = Integer.valueOf(strName.substring(index + 4));
+                    
                     countNum += 1;
                     
                     updateObj = new ObjectsForCopy__c (
@@ -39,6 +43,7 @@ public with sharing class Q17Controller {
                         Id                  = selectObj.Id
                     );
                 } else {
+                    // 初回
                     updateObj = new ObjectsForCopy__c (
                         Name                = newObj.Name + RELATION_STRING,
                         CopyAccountId__c    = newObj.Id,
