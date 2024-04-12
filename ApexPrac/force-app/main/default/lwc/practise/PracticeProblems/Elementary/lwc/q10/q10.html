@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Q10 LWC 階段足し算" icon-name="standard:formula">
+        <!-- 入力 -->
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-medium">
+                <label for="orangeNumber">入力値</label>
+                <lightning-input type="number" name="num" onchange={numberChangeHandler}></lightning-input>
+            </lightning-layout-item>
+            
+            <!-- ボタン -->
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-button label="判定" icon-position="right" onclick={sumOfStairs}></lightning-button>
+            </lightning-layout-item>
+
+            <!-- 出力 -->
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-formatted-text value={currentResult}></lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
