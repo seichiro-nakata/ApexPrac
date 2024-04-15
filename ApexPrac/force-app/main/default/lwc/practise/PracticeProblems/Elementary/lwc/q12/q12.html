@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Q12 LWC 3文字目出力" icon-name="standard:formula">
+        <!-- 入力 -->
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-medium">
+                <label for="orangeNumber">入力値</label>
+                <lightning-input type="text" name="text" onchange={numberChangeHandler}></lightning-input>
+            </lightning-layout-item>
+            
+            <!-- ボタン -->
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-button label="出力" icon-position="right" onclick={extraction3rdCharacter}></lightning-button>
+            </lightning-layout-item>
+
+            <!-- 出力 -->
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-formatted-text value={currentResult}></lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
