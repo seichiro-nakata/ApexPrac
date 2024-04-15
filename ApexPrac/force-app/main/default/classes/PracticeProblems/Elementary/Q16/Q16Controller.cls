@@ -4,6 +4,8 @@ public with sharing class Q16Controller {
     private Integer batchSize = 0;
     private Integer canExecuteRowsLimit = Limits.getLimitQueryRows() - Limits.getQueryRows();
 
+    private static final String NAME_TEXT = '_copy';
+
     public Q16Controller(Boolean isExecuting, Integer batchSize) {
         this.isExecuting = isExecuting;
         this.batchSize = batchSize;
@@ -14,7 +16,7 @@ public with sharing class Q16Controller {
 
         for (Account newObj : newList) {
             obj = new ObjectsForCopy__c (
-                Name = newObj.name + '_copy',
+                Name = newObj.name + NAME_TEXT,
                 CopyAccountId__c = newObj.Id,
                 CopyAccountName__c = newObj.Name
             );
