@@ -23,7 +23,8 @@ public with sharing class Q18Controller {
                 CopyAccountId__c = newObj.Id,
                 CopyAccountName__c = newObj.name,
                 scoringResultText__c = result,
-                scoringResult__c = scor
+                scoringResult__c = scor,
+                ScorintResults__c = result
             );
         } 
 
