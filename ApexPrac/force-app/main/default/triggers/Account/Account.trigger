@@ -1,4 +1,4 @@
-trigger Account on Account (after insert, after update) {
+trigger Account on Account (after insert, after update, after delete) {
     //再帰時やトリガオフスイッチがTrueの場合は処理を終了する。
     if (Q16Controller.hasExecuting || TriggerSwitch__mdt.getInstance('Account').IsTriggerOff__c) {
         return;
@@ -11,6 +11,7 @@ trigger Account on Account (after insert, after update) {
     Q16Controller Q16handler = new Q16Controller(Trigger.isExecuting, Trigger.size);
     Q17Controller Q17handler = new Q17Controller(Trigger.isExecuting, Trigger.size);
     Q18Controller Q18handler = new Q18Controller(Trigger.isExecuting, Trigger.size);
+    Q19Controller Q19handler = new Q19Controller(Trigger.isExecuting, Trigger.size);
 
     switch on Trigger.operationType {
         when AFTER_INSERT {
@@ -21,6 +22,9 @@ trigger Account on Account (after insert, after update) {
         when AFTER_UPDATE {
             // update処理がDBに保存された後に起動する処理
             Q17handler.AccountUpdateCopy(Trigger.new);
+        }
+        when AFTER_DELETE {
+            Q19handler.accountDelete(Trigger.old);
         }
     }
 }
