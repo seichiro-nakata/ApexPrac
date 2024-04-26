@@ -8,6 +8,7 @@ export default class Q1middle extends LightningElement {
     @track FirstName = '';
     @track Email = '';
 
+    // イベントハンドラー
     textChangeHandler(event) {
         const inputBoxName = event.target.name;
 
@@ -27,6 +28,7 @@ export default class Q1middle extends LightningElement {
         }
     }
 
+    // 取引先責任者作成Apexメソッド呼び出し
     createContactForm() {
         const outputAccountName = this.AccountName;
 
@@ -46,6 +48,7 @@ export default class Q1middle extends LightningElement {
             });
     }
 
+    // 入力フォームの初期化
     clearForm() {
         this.AccountName = '';
         this.LastName = '';
@@ -58,6 +61,7 @@ export default class Q1middle extends LightningElement {
         });
     }
 
+    // 処理結果表示
     showToast(title, variant) {
         const event = new ShowToastEvent({
             title,
